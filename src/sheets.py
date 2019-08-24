@@ -14,7 +14,7 @@ def CreateZVZSheet(sheet_name, items_data, players_data):
     ws = wb.add_worksheet(sheet_name)
 
     local_time = datetime.datetime.now()
-    tr_time = local_time + datetime.timedelta(hours=3)
+    tr_time = local_time + datetime.timedelta(hours=1)
     tr_time_str = tr_time.strftime("%d/%m/%Y, %H:%M:%S")
 
     ws.write(0, 0, "Tarih")
