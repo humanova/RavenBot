@@ -76,5 +76,5 @@ def GetItemPrice(item_name, count):
         print(f"Error while getting/parsing url : {url}...")
         print(e)
 
-    price = int(data[0]['buy_price_min'])
+    price = int(data[0]['sell_price_min'])
     return price * count
