@@ -49,7 +49,7 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
         players_has_item = []
         p_h_text = ""
         for player in players_data:
-            for key, value in player:
+            for value in player:
                 if value == item[0]:
                     players_has_item.append(player['Player'])
         
