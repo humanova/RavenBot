@@ -67,7 +67,7 @@ async def on_message(message):
                 player_data = zvz.GetVictimsInventory(links)
                 items_data = zvz.GetTotalItems(player_data)
                 done, dat = sheets.CreateZVZSheet(
-                    zvz_name, items_data, player_data)
+                    zvz_name, items_data, player_data, links)
 
                 if done:
                     print("uploading zvz worksheet")

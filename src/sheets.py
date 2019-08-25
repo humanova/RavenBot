@@ -8,7 +8,7 @@ import xlsxwriter
 import zvz
 
 
-def CreateZVZSheet(sheet_name, items_data, players_data):
+def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
 
     wb = xlsxwriter.Workbook(f'sheets/{sheet_name}.xlsx')
     ws = wb.add_worksheet(sheet_name)
@@ -22,6 +22,11 @@ def CreateZVZSheet(sheet_name, items_data, players_data):
     ws.write(0, 1, "Item")
     ws.write(0, 2, "Item adeti")
     ws.write(0, 3, "Market degeri (Caerleon)")
+    ws.write(0, 5, "Killboard Linkleri")
+
+    i = 2
+    for link in killboard_links:
+        ws.write(i, 5, link)
 
     i = 2
     total_price = 0
