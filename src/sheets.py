@@ -23,6 +23,7 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
     ws.write(0, 2, "ItemIsmi")
     ws.write(0, 3, "ItemAdeti")
     ws.write(0, 4, "MarketDegeri(Caerleon)")
+    ws.write(0, 5, "ItemSahipleri")
     ws.write(0, 8, "KillboardLinkleri")
 
     i = 2
@@ -49,8 +50,8 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
         players_has_item = []
         p_h_text = ""
         for player in players_data:
-            for value in player:
-                if value == item[0]:
+            for item_name in player.values():
+                if item_name == item[0]:
                     players_has_item.append(player['Player'])
         
         for p in players_has_item:
