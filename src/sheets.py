@@ -25,7 +25,6 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
     ws.write(0, 4, "MarketDegeri(Caerleon)")
     ws.write(0, 7, "KillboardLinkleri")
 
-    killboard_links.reverse()
     i = 2
     for link in killboard_links:
         ws.write(i, 7, players_data[i-2]['Player'])
