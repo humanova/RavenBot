@@ -19,10 +19,11 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
 
     ws.write(0, 0, "Tarih")
     ws.write(1, 0, tr_time_str)
-    ws.write(0, 1, "Item")
-    ws.write(0, 2, "Item adeti")
-    ws.write(0, 3, "Market degeri (Caerleon)")
-    ws.write(0, 5, "Killboard Linkleri")
+    ws.write(0, 1, "ItemFoto")
+    ws.write(0, 2, "ItemIsmi")
+    ws.write(0, 3, "ItemAdeti")
+    ws.write(0, 4, "MarketDegeri(Caerleon)")
+    ws.write(0, 6, "KillboardLinkleri")
 
     i = 2
     for link in killboard_links:
@@ -39,10 +40,12 @@ def CreateZVZSheet(sheet_name, items_data, players_data, killboard_links):
         total_price += item_price
 
         ws.write(i, 1, img_url)
-        ws.write(i, 2, item[1])
-        ws.write(i, 3, item_price)
+        ws.write(i, 2, item[0])
+        ws.write(i, 3, item[1])
+        ws.write(i, 4, item_price)
 
         i += 1
+        
     ws.write(1, 3, f"Toplam : {total_price}")
     wb.close()
 
