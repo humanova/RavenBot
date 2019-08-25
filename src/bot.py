@@ -54,7 +54,7 @@ async def on_message(message):
 
     if not message.author.bot == 1:
 
-        if message.content.startswith("!zvz "):
+        if message.content.startswith("!zvz ") and message.author.id in zvz_command_whitelist:
 
             msgs = message.content.split(" ")
             if len(msgs) != 1:
@@ -91,7 +91,7 @@ async def on_message(message):
                 embed.set_footer(text=f"Tarih: {dat['date']}")
                 await client.send_message(discord.Object(id=ZVZChannelID), embed=embed)
 
-        if message.content == "!zvz-temizle":
+        if message.content == "!zvz-temizle" and message.author.id in zvz_command_whitelist:
             msgs = []
             async for m in client.logs_from(discord.Object(id=ZVZChannelID)):
                 msgs.append(m)
